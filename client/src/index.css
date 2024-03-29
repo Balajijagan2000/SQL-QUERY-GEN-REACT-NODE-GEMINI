@@ -1,0 +1,216 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --container-width: 600px;
+}
+#root {
+  display: grid;
+  place-content: center;
+}
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+.container {
+  /* border: 1px solid white; */
+  height: 600px;
+  width: var(--container-width);
+  overflow: hidden;
+  padding: 1em;
+  border-radius: .4em;
+  
+  
+
+  background: #242424;
+  box-shadow:  -50px -50px 100px #0e0e0e,
+               50px 50px 100px #3a3a3a;
+}
+.chat-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: .8em;
+  /* border: 1px solid white; */
+  background-color: #4d4d4d;
+  border-radius: .3em;
+}
+.chat-box textarea {
+  resize: none;
+  width: 100%;
+  height: 120px;
+  font-size: 1.5rem;
+  padding: .5em;
+  border-top-left-radius: .3em;
+  border-top-right-radius: .3em;
+  border-bottom: .3px solid rgba(255, 255, 255, 0.2);
+  background-color: #4d4d4d;
+  outline: none;
+}
+.chat-box textarea::placeholder {
+  font-size: 1rem;
+}
+.chat-box textarea:focus {
+  background-color: #333333;
+}
+.chat-box div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1em;
+  width: 100%;
+}
+.chat-box button {
+  border: none;
+  outline: none;
+  color: #e6e6e6;
+  font-size: 1.5rem;
+  background:transparent;
+  font-weight: 300;
+  cursor: pointer;
+  padding: .3em;
+}
+.chat-history-box {
+  width: 100%;
+  height: 150px;
+  padding:.5em;
+  overflow-y: scroll;
+  background-color: #808080;
+  border-radius: .3em;
+}
+.chat-history-box::-webkit-scrollbar {
+  display: none;
+}
+.history {
+  width: 100%;
+  height: max-content;
+  border-radius: .3em;
+  background-color: #333333;
+  display: flex;
+  gap: 1em;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: .5em;
+  padding: .5em;
+}
+.history button {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  padding: .3em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.history button:hover {
+  background-color: #4d4d4d;
+}
+/* button {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  font-weight: 400;
+  width: 150px;
+  height: 40px;
+  border-radius: .3em;
+  cursor: pointer;
+  background-color: #1c2841;
+  color: whitesmoke;
+  border: .5px solid whitesmoke;
+  transition: all .3s ease;
+  margin-bottom: .3em;
+}
+button:hover {
+  background-color: whitesmoke;
+  color: #1c2841;
+} */
+.chat-response-box {
+  width: 100%;
+  height: 220px;
+  margin-top: .5em;
+  padding: .3em;
+  background-color: #1a1a1a;
+}
+.chat-response-box  button {
+  margin-top:.8em ;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: lightgray;
+  font-size: 1.2rem;
+  font-weight: 300;
+  background: transparent;
+  margin: .2em .4em;
+}
+.chat-response-box button:hover {
+  color: white;
+}
+.chat-response-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  position: relative;
+  background-color: #4d4d4d;
+  border-radius: .4em;
+  margin-top: .5em;
+}
+.chat-response-btns span {
+  background-color: #333333;
+  font-size: .8rem;
+  font-weight: 400;
+  border-radius: .3em;
+  position: absolute;
+  top:30px;
+  right: 30%;
+  padding: .3em;
+}
+.chat-response-btns span.hide {
+  display: none;
+}
+.chat-response {
+  overflow-y: scroll;
+  height: 160px;
+  padding: .4em;
+  border-bottom: .5px solid rgba(255, 255, 255, 0.2);
+}
+.chat-response::-webkit-scrollbar {
+  display: none;
+}
+
+.loader {
+  margin: auto;
+  border: 5px solid #f3f3f3; /* Light grey border */
+  border-top: 5px solid #3498db; /* Blue border on top */
+  border-radius: 50%; /* Makes the loader circular */
+  width: 30px;
+  height: 30px;
+  animation: spin 1.3s linear infinite; /* Spinning animation */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
